@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Atividade Diagnóstica — Cidades Inteligentes</title>
+  <style>
+    :root{--bg:#f7f9fc;--card:#ffffff;--accent:#0b69ff;--muted:#6b7280}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);margin:0;padding:24px;color:#111}
+    .container{max-width:900px;margin:0 auto}
+    .card{background:var(--card);border-radius:12px;padding:20px;box-shadow:0 6px 20px rgba(15,23,42,0.06)}
+    h1{margin:0 0 8px;font-size:20px}
+    p.lead{margin-top:0;color:var(--muted)}
+    fieldset{border:0;padding:0;margin:16px 0}
+    legend{font-weight:600;margin-bottom:8px}
+    label.option{display:block;padding:8px 10px;border-radius:8px;margin:6px 0;background:#f3f5f7;cursor:pointer}
+    input[type="radio"], input[type="checkbox"]{margin-right:10px}
+    textarea{width:100%;min-height:84px;padding:10px;border-radius:8px;border:1px solid #e5e7eb}
+    .muted{color:var(--muted);font-size:14px}
+    .actions{display:flex;gap:12px;margin-top:12px}
+    button{background:var(--accent);color:#fff;border:0;padding:10px 14px;border-radius:8px;cursor:pointer}
+    button.secondary{background:#e5e7eb;color:#111}
+    .result{margin-top:16px;padding:12px;border-radius:8px;background:#eef2ff}
+    small.note{display:block;margin-top:8px;color:var(--muted)}
+    .download{margin-left:auto}
+    @media (max-width:520px){body{padding:16px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>Atividade Diagnóstica — Cidades Inteligentes</h1>
+      <p class="lead">Antes de começar: esta atividade <strong>não vale nota</strong>. Ela serve para identificar o que você já sabe e o que precisa ser explorado na unidade. Responda com honestidade.</p>
+
+      <form id="quiz" aria-labelledby="formTitle">
+
+        <fieldset>
+          <legend>Parte 1 — O que já entendo sobre cidades inteligentes?</legend>
+
+          <label class="option"><input type="radio" name="q1" value="tecnologia_pura">Uma cidade que usa muita tecnologia.</label>
+          <label class="option"><input type="radio" name="q1" value="tecnologia_vida">Um lugar onde tecnologia e qualidade de vida caminham juntas.</label>
+          <label class="option"><input type="radio" name="q1" value="prédios_transporte">Uma cidade que tem prédios modernos e transporte rápido.</label>
+          <label class="option"><input type="radio" name="q1" value="nao_claro">Ainda não tenho clareza sobre o que define uma cidade inteligente.</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>2. Em sua opinião, o principal objetivo de uma cidade inteligente é:</legend>
+          <label class="option"><input type="radio" name="q2" value="governo_digital">Tornar o governo mais digital.</label>
+          <label class="option"><input type="radio" name="q2" value="qualidade_vida">Melhorar a vida das pessoas por meio da inovação e da sustentabilidade.</label>
+          <label class="option"><input type="radio" name="q2" value="empresa_tecnologia">Aumentar o número de empresas de tecnologia.</label>
+          <label class="option"><input type="radio" name="q2" value="nao_sei">Não sei ao certo.</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>3. Acha que a sua cidade tem características de cidade inteligente?</legend>
+          <label class="option"><input type="radio" name="q3" value="sim_varias">Sim, várias!</label>
+          <label class="option"><input type="radio" name="q3" value="algumas">Algumas, mas ainda há muito a melhorar.</label>
+          <label class="option"><input type="radio" name="q3" value="poucas">Poucas ou nenhuma.</label>
+          <label class="option"><input type="radio" name="q3" value="nao_sei_identificar">Não sei identificar.</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Parte 2 — Conceitos e termos</legend>
+          <p class="muted">4. Marque os termos que você já ouviu e entende (marque todos que se aplicam):</p>
+          <label class="option"><input type="checkbox" name="terms" value="Mobilidade urbana">Mobilidade urbana</label>
+          <label class="option"><input type="checkbox" name="terms" value="Internet das Coisas (IoT)">Internet das Coisas (IoT)</label>
+          <label class="option"><input type="checkbox" name="terms" value="Sustentabilidade urbana">Sustentabilidade urbana</label>
+          <label class="option"><input type="checkbox" name="terms" value="Big Data">Big Data</label>
+          <label class="option"><input type="checkbox" name="terms" value="Planejamento urbano">Planejamento urbano</label>
+          <label class="option"><input type="checkbox" name="terms" value="Governança digital">Governança digital</label>
+          <label class="option"><input type="checkbox" name="terms" value="Energia inteligente">Energia inteligente</label>
+          <label class="option"><input type="checkbox" name="terms" value="nenhum">Não conheço nenhum desses termos</label>
+
+          <p class="muted">5. Há algum conceito que você já ouviu, mas não entende bem? (resposta aberta)</p>
+          <textarea id="q5" name="q5" placeholder="Escreva aqui o conceito... (opcional)"></textarea>
+
+          <p class="muted">6. Que iniciativa mais representa, para você, uma cidade inteligente?</p>
+          <label class="option"><input type="radio" name="q6" value="transporte">Transporte público eficiente e sustentável</label>
+          <label class="option"><input type="radio" name="q6" value="app_governo">Aplicativos que facilitam a comunicação com o governo</label>
+          <label class="option"><input type="radio" name="q6" value="energia_residuos">Energia limpa e gestão de resíduos</label>
+          <label class="option"><input type="radio" name="q6" value="todas">Todas as alternativas anteriores</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Reflexão final (responda em até 5 linhas)</legend>
+          <p class="muted">Descreva com suas palavras: o que é uma cidade inteligente?</p>
+          <textarea id="reflexao" name="reflexao" placeholder="Resposta..." required></textarea>
+        </fieldset>
+
+        <div class="actions">
+          <button type="button" id="submitBtn">Enviar (não vale nota)</button>
+          <button type="button" id="limparBtn" class="secondary">Limpar respostas</button>
+          <a id="downloadLink" class="download" style="display:none"></a>
+        </div>
+
+      </form>
+
+      <div id="output" aria-live="polite"></div>
+      <small class="note">Seu professor usará as respostas para orientar as próximas aulas. Se preferir, copie o texto gerado e cole no ambiente de envio da sua disciplina.</small>
+
+    </div>
+  </div>
+
+  <script>
+    function getRadioValue(name){
+      const el = document.querySelector('input[name="'+name+'"]:checked');
+      return el ? el.value : '';
+    }
+    function getCheckboxValues(name){
+      const els = Array.from(document.querySelectorAll('input[name="'+name+'"]:checked'));
+      return els.map(e => e.value);
+    }
+
+    function buildSummary(data){
+      return `--- Resumo da Atividade Diagnóstica: Cidades Inteligentes ---\n\n`+
+        `1) Visão inicial sobre cidade inteligente: ${data.q1 || '---'}\n`+
+        `2) Objetivo percebido: ${data.q2 || '---'}\n`+
+        `3) Características na minha cidade: ${data.q3 || '---'}\n\n`+
+        `Termos que conheço: ${data.terms.length ? data.terms.join(', ') : 'Nenhum listado'}\n`+
+        `Conceito que não entendo bem: ${data.q5 || '---'}\n`+
+        `Iniciativa que representa cidade inteligente: ${data.q6 || '---'}\n\n`+
+        `Reflexão final (minha definição):\n${data.reflexao || '---'}\n\n`+
+        `Observação: Esta atividade não é avaliativa e não vale nota.`;
+    }
+
+    document.getElementById('submitBtn').addEventListener('click', function(){
+      const data = {
+        q1: getRadioValue('q1'),
+        q2: getRadioValue('q2'),
+        q3: getRadioValue('q3'),
+        terms: getCheckboxValues('terms'),
+        q5: document.getElementById('q5').value.trim(),
+        q6: getRadioValue('q6'),
+        reflexao: document.getElementById('reflexao').value.trim()
+      };
+
+      if(!data.reflexao){
+        alert('Por favor, escreva sua reflexão final antes de enviar.');
+        return;
+      }
+
+      const summary = buildSummary(data);
+
+      // show on screen
+      const out = document.getElementById('output');
+      out.innerHTML = '';
+      const div = document.createElement('div');
+      div.className = 'result card';
+      div.innerHTML = '<strong>Resumo gerado (copie e cole no envio):</strong><pre style="white-space:pre-wrap">'+escapeHtml(summary)+'</pre>';
+      out.appendChild(div);
+
+      // prepare download
+      const blob = new Blob([summary], {type: 'text/plain;charset=utf-8'});
+      const url = URL.createObjectURL(blob);
+      const a = document.getElementById('downloadLink');
+      a.href = url;
+      a.download = 'resumo_atividade_diagnostica_cidades_inteligentes.txt';
+      a.textContent = 'Baixar resumo (.txt)';
+      a.style.display = 'inline-block';
+      a.style.marginLeft = '12px';
+
+    });
+
+    document.getElementById('limparBtn').addEventListener('click', function(){
+      if(confirm('Deseja limpar todas as respostas?')){
+        document.getElementById('quiz').reset();
+        document.getElementById('output').innerHTML = '';
+        const a = document.getElementById('downloadLink'); a.style.display='none';
+      }
+    });
+
+    function escapeHtml(unsafe) {
+      return unsafe
+           .replace(/&/g, "&amp;")
+           .replace(/</g, "&lt;")
+           .replace(/>/g, "&gt;")
+           .replace(/\"/g, "&quot;")
+           .replace(/'/g, "&#039;");
+    }
+  </script>
+</body>
+</html>
